@@ -7,13 +7,16 @@ import {
   Badge,
   Banner,
   Button,
-  Card
+  Card,
+  Carousel
 } from "flowbite-react";
-import { HiCheck, HiExclamation, HiQuestionMarkCircle, HiX } from 'react-icons/hi';
+import { HiCheck, HiChevronLeft, HiExclamation, HiQuestionMarkCircle, HiX } from 'react-icons/hi';
 
 import { MdAnnouncement } from 'react-icons/md';
 
 const HomePage = () => {
+  const LOGO = 'https://yt3.ggpht.com/ytc/APkrFKbCeq3QFsaH8ggv64lVghz6fnfX1PWPWlxtXrP7=s176-c-k-c0x00ffffff-no-rj';
+  
   return (
     <>
       <div className="component">
@@ -60,8 +63,8 @@ const HomePage = () => {
       <div className="component">
         <h1>Avatar</h1>
         <div className="flex flex-wrap gap-4 bg-gray-600 w-fit p-2">
-          <Avatar rounded img='https://yt3.ggpht.com/ytc/APkrFKbCeq3QFsaH8ggv64lVghz6fnfX1PWPWlxtXrP7=s176-c-k-c0x00ffffff-no-rj' />
-          <Avatar img='https://yt3.ggpht.com/ytc/APkrFKbCeq3QFsaH8ggv64lVghz6fnfX1PWPWlxtXrP7=s176-c-k-c0x00ffffff-no-rj' />
+          <Avatar rounded img={LOGO} />
+          <Avatar img={LOGO} />
         </div>
 
         <div className="component">
@@ -110,7 +113,7 @@ const HomePage = () => {
         <Card
           className="max-w-sm"
           imgAlt="logo"
-          imgSrc='https://yt3.ggpht.com/ytc/APkrFKbCeq3QFsaH8ggv64lVghz6fnfX1PWPWlxtXrP7=s176-c-k-c0x00ffffff-no-rj'
+          imgSrc={LOGO}
         >
           <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             Learn to code with Coderversity
@@ -119,6 +122,18 @@ const HomePage = () => {
             Subscribe to our YouTube channel: @coderversity
           </p>
         </Card>
+      </div>
+
+      <div className="component">
+        <h1>Carousel</h1>
+        
+        <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
+          <Carousel pauseOnHover>
+            <img src={LOGO} />
+            <img src={LOGO} />
+          </Carousel>
+          </div>
+
       </div>
     </>
   )
