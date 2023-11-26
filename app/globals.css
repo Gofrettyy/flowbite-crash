@@ -11,10 +11,6 @@
         @apply font-semibold;
     }
 
-    header {
-        @apply mb-20;
-    }
-
     nav {
         @apply !bg-blue-800;
     }
@@ -30,6 +26,6 @@
     }
 
     .component {
-        @apply mb-10;
+        @apply mb-6;
     }
 }
