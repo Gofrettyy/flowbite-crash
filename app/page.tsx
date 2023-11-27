@@ -8,14 +8,22 @@ import {
   Banner,
   Button,
   Card,
-  Carousel
+  Carousel,
+  Checkbox,
+  Datepicker,
+  Label,
+  Modal,
+  Progress,
+  TextInput
 } from "flowbite-react";
 import { HiCheck, HiChevronLeft, HiExclamation, HiQuestionMarkCircle, HiX } from 'react-icons/hi';
 
 import { MdAnnouncement } from 'react-icons/md';
+import { useState } from "react";
 
 const HomePage = () => {
   const LOGO = 'https://yt3.ggpht.com/ytc/APkrFKbCeq3QFsaH8ggv64lVghz6fnfX1PWPWlxtXrP7=s176-c-k-c0x00ffffff-no-rj';
+  const [openModal, setOpenModal] = useState(false);
   
   return (
     <>
@@ -126,14 +134,70 @@ const HomePage = () => {
 
       <div className="component">
         <h1>Carousel</h1>
-        
         <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
           <Carousel pauseOnHover>
             <img src={LOGO} />
             <img src={LOGO} />
           </Carousel>
           </div>
+      </div>
 
+      <div className="component">
+        <h1>Datepicker</h1>
+        <div className="w-1/3">
+          {/* Flowbite React Datepicker */}
+          <Datepicker />
+        </div>
+      </div>
+
+      <div className="component">
+        <h1>Form</h1>
+        <form className="flex max-w-md flex-col gap-4">
+          <div>
+            <div className="mb-2 block">
+              <Label htmlFor="email" value="Email" />
+            </div>
+            <TextInput id="email" type="email" placeholder="name@example.com" required />
+          </div>
+          <div>
+            <div className="mb-2 block">
+              <Label htmlFor="password" value="Password" />
+            </div>
+            <TextInput id="password" type="password" required />
+          </div>
+          <div className="flex items-center gap-2">
+            <Checkbox id="remember" />
+            <Label htmlFor="remember">Remember me</Label>
+          </div>
+          <Button type="submit">Submit</Button>
+        </form>
+      </div>
+
+      <div className="component">
+        <h1>Modal</h1>
+        <Button onClick={() => setOpenModal(true)}>Open modal</Button>
+        <Modal dismissible show={openModal} onClose={() => setOpenModal(false)}>
+          <Modal.Header>Modal Heading</Modal.Header>
+          <Modal.Body>
+            <div className="space-y-6">
+              <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                This is the modal body.
+              </p>
+            </div>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button onClick={() => setOpenModal(false)}>Confirm</Button>
+            <Button color="gray" onClick={() => setOpenModal(false)}>
+              Decline
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </div>
+
+      <div className="component">
+        <h1>Progress Bar</h1>
+        <Progress progress={50} />
+        <p className="text-center pt-2">50% complete</p>
       </div>
     </>
   )

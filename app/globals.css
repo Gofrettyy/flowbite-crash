@@ -28,4 +28,11 @@
     .component {
         @apply mb-6;
     }
+
+    .footer {
+        @apply !bg-blue-800;
+    }
+    .footer * {
+        @apply !text-white font-bold tracking-wide;
+    }
 }

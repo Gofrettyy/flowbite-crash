@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { Navbar } from "flowbite-react";
 
-const Header = () => {
+const AppHeader = () => {
     return (
         <header>
             <Navbar rounded>
@@ -21,4 +21,4 @@ const Header = () => {
     )
 }
 
-export default Header
+export default AppHeader
